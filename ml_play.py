@@ -24,9 +24,9 @@ def ml_loop(side: str):
     # 1. Put the initialization code here.
     ball_served = False
     if side == "1P":
-        filename = path.join(path.dirname(_file_),"clf_KMeans_PingPong.pickle")
+        filename = path.join(path.dirname(__file__),"clf_KMeans_PingPong.pickle")
     else:
-        filename = path.join(path.dirname(_file_),"clf_KMeans_PingPong_p2.pickle")
+        filename = path.join(path.dirname(__file__),"clf_KMeans_PingPong_p2.pickle")
     with open(filename, 'rb') as file:
         clf_p1 = pickle.load(file)
     
