@@ -6,7 +6,7 @@ The template of the script for the machine learning process in game pingpong
 from mlgame.communication import ml as comm
 import pickle
 import numpy as np
-import os
+from os import path
 
 def ml_loop(side: str):
     """
@@ -21,11 +21,15 @@ def ml_loop(side: str):
     ```
     @param side The side which this script is executed for. Either "1P" or "2P".
     """
-    path = os.getcwd()
-    with open(os.path.join(path,'games','pingpong','ml','save','decisiontree_300_slice.pickle'), 'rb') as f:
-        decisiontree = pickle.load(f)
-    with open(os.path.join(path,'games','pingpong','ml','save','decisiontree_300_slice_for_1P.pickle'), 'rb') as f:
-        decisiontree_1P = pickle.load(f)
+    filename = path.join(path.dirname(__file__), 'save', 'decisiontree_300_slice.pickle')
+    with open(filename, 'rb') as file:
+        decisiontree = pickle.load(file)
+
+    filename = path.join(path.dirname(__file__), 'save', 'decisiontree_300_slice_for_1P.pickle')
+    with open(filename, 'rb') as file:
+        decisiontree_1P = pickle.load(file)
+    
+
     # === Here is the execution order of the loop === #
     # 1. Put the initialization code here
     ball_served = False
