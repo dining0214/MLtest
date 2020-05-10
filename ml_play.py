@@ -7,6 +7,7 @@ from mlgame.communication import ml as comm
 import pickle
 import numpy as np
 from os import path
+from sklearn.tree import DecisionTreeRegressor
 
 def ml_loop(side: str):
     """
