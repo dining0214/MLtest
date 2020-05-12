@@ -22,7 +22,8 @@ def ml_loop(side: str):
     ```
     @param side The side which this script is executed for. Either "1P" or "2P".
     """
-    with open(os.path.join(os.path.dirname(__file__),'save','decisiontree_300_slice.pickle'), 'rb') as f:
+    #with open(os.path.join(os.path.dirname(__file__),'save','decisiontree_300_slice.pickle'), 'rb') as f:
+    with open(os.path.join(os.path.dirname(__file__),'save','mlp.pickle'), 'rb') as f:
         decisiontree = pickle.load(f)
     # with open(os.path.join(os.path.dirname(__file__),'save','decisiontree_300_slice_ballspeed_for_1P.pickle'), 'rb') as f:
     #     decisiontree_1P = pickle.load(f)
