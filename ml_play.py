@@ -97,7 +97,7 @@ def ml_loop(side: str):
                 direction = 2
             else:
                 direction = 3
-        X = [scene_info["ball"][0], scene_info["ball"][1], direction, scene_info["blocker"][0],scene_info["ball_speed"][0],scene_info["ball_speed"][1]]
+        X = [scene_info["ball"][0], scene_info["ball"][1], direction, scene_info["blocker"][0]]
         X = np.array(X).reshape((1,-1))
         pred = decisiontree.predict(X)
         return move_to(player = '2P',pred = pred)
